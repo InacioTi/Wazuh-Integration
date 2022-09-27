@@ -4,12 +4,6 @@ SRV-WAZUH-SIEM
 
 [https://www.youtube.com/watch?v=ksFPu8DTDAs](https://www.youtube.com/watch?v=ksFPu8DTDAs)
 
-## Acesso
-
-https:192.168.20.105
-User: admin
-New Password:R!ckM0rt1+
-Old Password: hvUyE79jJunL..+cEXftc.DUR.fNEX1E
 
 # Guia instalaçõa do wazuh
 
@@ -21,7 +15,7 @@ Old Password: hvUyE79jJunL..+cEXftc.DUR.fNEX1E
 
 4 ° Baixar o script para alterar senha
 curl -so [wazuh-passwords-tool.sh](http://wazuh-passwords-tool.sh/) [https://packages.wazuh.com/4.3/wazuh-passwords-tool.sh](https://packages.wazuh.com/4.3/wazuh-passwords-tool.sh)
-exemplo: bash [wazuh-passwords-tool.sh](http://wazuh-passwords-tool.sh/) -u admin -p 'R!ckM0rt1+'
+exemplo: bash [wazuh-passwords-tool.sh](http://wazuh-passwords-tool.sh/) -u admin -p 'SENHA'
 
 5 ° Criar grupo em wazuh > Management > Groups
 
@@ -54,7 +48,7 @@ Editar grupo e colocar
 <!-- Integração com VirusTotal -->
 <integration>
 <name>virustotal</name>
-<api_key>fce39da5b006238fccc4aca447032f12c22a1bbbe19b15b55b79aacc12a5d3e0</api_key> <!-- Replace with your VirusTotal API key -->
+<api_key>KEYAQUI</api_key> <!-- Replace with your VirusTotal API key -->
 <group>syscheck</group>
 <alert_format>json</alert_format>
 </integration>
@@ -158,9 +152,9 @@ systemctl restart wazuh-dashboard.service
 #colocar localhost por que usaremos postfix
 <smtp_server>localhost</smtp_server>
 #email que enviara os alertas
-<email_from>[jose.inaciot@outlook.com](mailto:jose.inaciot@outlook.com)</email_from>
+<email_from>teste@exemplo.com</email_from>
 #email que recebera os alertas
-<email_to>[jose.inacio@daryus.com.br](mailto:jose.inacio@daryus.com.br)</email_to>
+<email_to>teste@exemplo.com</email_to>
 <email_maxperhour>12</email_maxperhour>
 <email_log_source>alerts.log</email_log_source>
 <agents_disconnection_time>10m</agents_disconnection_time>
@@ -235,7 +229,7 @@ echo "Test mail from postfix" | mail -s "Test Postfix" -r "seuemaildeenvio@teste
 
 <!-- Customizar alertas por email filtrando por id da regra -->
 <email_alerts>
-<email_to>jose.inacio@daryus.com.b</email_to>
+<email_to>teste@exemplo.com</email_to>
 <rule_id>515, 516</rule_id>
 <do_not_delay />
 </email_alerts>
@@ -246,7 +240,7 @@ echo "Test mail from postfix" | mail -s "Test Postfix" -r "seuemaildeenvio@teste
 
 <integration>
 <name>custom-email-alerts</name>
-<hook_url>[jose.inacio@daryus.com.br](mailto:jose.inacio@daryus.com.br)</hook_url>
+<hook_url>teste@exemplo.com</hook_url>
 <rule_id>651,5760</rule_id>
 <alert_format>json</alert_format>
 </integration>
@@ -258,7 +252,7 @@ wget [https://raw.githubusercontent.com/jctello/JCT-Wazuh/main/integrations/cust
 ## Edito o arquvio adcionado o seguinte:
 
 email_server = "localhost"
-email_from = "[jose.inaciot@outlook.com](mailto:jose.inaciot@outlook.com)"
+email_from = "teste@exemplo.com"
 
 ## Adicione o script personalizado para enviar emails em /var/ossec/integrations/custom-email-alerts e dê a ele a propriedade e as permissões corretas:
 
