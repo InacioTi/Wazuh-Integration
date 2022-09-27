@@ -276,6 +276,8 @@ systemctl restart wazuh-manager
 
 tail -f /var/ossec/logs/ossec.log | grep custom-
 
+Observação  Desativar o <email_notification>yes</email_notification> na conf do wazuh caso vá usar o alerta personalizado
+
 # Lembrar de habilitar e-mail de terceiro no provedor
 
 Referencias em
