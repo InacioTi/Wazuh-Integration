@@ -56,8 +56,8 @@ def generate_msg(alert):
     O {i} tentou login com o usuario "{u}".
     Por gentileza consulte o Dashboard do Wazuh para mais detalhes.
     O conteudo do alerta segue abaixo:
-    {e}
-    """.format(a=timestamp,b=agentname,c=description,d=level,i=SrCIp,u=User,e=json.dumps(alert,indent=4))
+    """.format(a=timestamp,b=agentname,c=description,d=level,i=SrCIp,u=User)
+#e=json.dumps(alert,indent=4))
 
     return subject, message
 
@@ -87,9 +87,9 @@ def main(args):
     debug("# File location")
     debug(alert_file_location)
 
-    # Load alert. Parse JSON object.
+     #Load alert. Parse JSON object.
     with open(alert_file_location) as alert_file:
-        json_alert = json.load(alert_file)
+       json_alert = json.load(alert_file)
     debug("# Processing alert")
     debug(json_alert)
 
