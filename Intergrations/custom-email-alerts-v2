@@ -41,8 +41,8 @@ def generate_msg(alert):
     description = alert['rule']['description']
     level = alert['rule']['level']
     agentname = alert['agent']['name']
-    SrCIp = alert['data']['srcip']
-    User =  alert['data']['dstuser']
+#    SrCIp = alert['data']['srcip']
+#    User =  alert['data']['dstuser']
 #   LogCOmpleto = alert['rule']['full_log']
     t = time.strptime(alert['timestamp'].split('.')[0],'%Y-%m-%dT%H:%M:%S')
     timestamp = time.strftime('%c',t)
@@ -53,10 +53,9 @@ def generate_msg(alert):
     Esta é uma mensagem automática da sua instância do Wazuh.
 
     Em {a} Foi gerado um evento pelo agente "{b}" acionando a Regra "{c}" de nivel {d}.
-    O {i} tentou login com o usuario "{u}".
+
     Por gentileza consulte o Dashboard do Wazuh para mais detalhes.
-    O conteudo do alerta segue abaixo:
-    """.format(a=timestamp,b=agentname,c=description,d=level,i=SrCIp,u=User)
+    """.format(a=timestamp,b=agentname,c=description,d=level)
 #e=json.dumps(alert,indent=4))
 
     return subject, message
