@@ -52,7 +52,7 @@ def generate_msg(alert):
     message = """
     Esta é uma mensagem automática da sua instância do Wazuh.
 
-    Em {a} Foi gerado um evento pelo agente "{b}" acionando a Regra "{c}" de nivel {d}.
+    Em {a} Foi gerado um evento pelo agente "{b}" Acionando a Regra "{c}" de Nivel {d}.
 
     Por gentileza consulte o Dashboard do Wazuh para mais detalhes.
     """.format(a=timestamp,b=agentname,c=description,d=level)
