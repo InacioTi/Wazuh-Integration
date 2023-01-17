@@ -45,7 +45,7 @@ def generate_msg(alert):
 #    User =  alert['data']['dstuser']
 #   LogCOmpleto = alert['rule']['full_log']
     t = time.strptime(alert['timestamp'].split('.')[0],'%Y-%m-%dT%H:%M:%S')
-    timestamp = time.strftime('%c',t)
+    timestamp = time.strftime('%d/%m/%Y %H:%M:%S')
 
     subject = 'Wazuh Alert: {0}, {1}'.format(description, agentname)
 
