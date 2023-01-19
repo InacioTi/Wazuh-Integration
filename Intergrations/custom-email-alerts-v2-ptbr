@@ -1,16 +1,17 @@
 #!/var/ossec/framework/python/bin/python3
 ##### custom-email-alerts
 # Author: Juan C. Tello
-# Version: 2022.01.13
+# Modify version PTBR: José Inácio
+# Version: 2023.01.19
 # Description:
 #
-# This integration allows the user to send fully customizable email alerts
-#  this is a simple implementation for which the message is customized in
-#  the generate_msg() function. A full html body is accepted if necessary.
-#  Another assumption is that the mail server does not require authentication
-#  the script can be easily adapted to use authentication or a local postfix
-#  proxy may be used as explained in steps 1-6 of the following guide:
-#  https://documentation.wazuh.com/4.2/user-manual/manager/manual-email-report/smtp-authentication.html
+# Essa integração permite que o usuário envie alertas de e-mail totalmente personalizáveis
+# esta é uma implementação simples para a qual a mensagem é customizada em
+# a função generate_msg(). Um corpo html completo é aceito, se necessário.
+# Outra suposição é que o servidor de email não requer autenticação
+# o script pode ser facilmente adaptado para usar autenticação ou um postfix local
+# proxy pode ser usado conforme explicado nas etapas 1 a 6 do guia a seguir:
+# https://documentation.wazuh.com/4.2/user-manual/manager/manual-email-report/smtp-authentication.html
 #
 # Configuration example:
 #
